@@ -8,14 +8,14 @@ import {
     User,
 } from "lucide-react";
 
-export default function Sidebar({ isOpen }) {
+const UserSidebar = ({ isOpen }) => {
     const [openDropdown, setOpenDropdown] = useState(false);
 
     return (
         <aside
             className={`min-h-screen bg-slate-900 text-white transition-all duration-500
                ${isOpen ? "w-64" : "w-0 md:w-20"} 
-              fixed md:relative`}
+              fixed md:relative z-50`}
         >
             {/* Logo (fixed) */}
             <div className="bg-slate-900 p-4 font-bold text-lg border-b">
@@ -82,3 +82,5 @@ export default function Sidebar({ isOpen }) {
         </aside>
     );
 }
+
+export default UserSidebar;

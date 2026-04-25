@@ -44,7 +44,7 @@ const BookingForm = () => {
     };
 
     const handleCall = () => {
-        window.location.href = "tel:+251911123456"; // Replace with actual number
+        window.location.href = "Ethiotel:+251 927 5203 86"; // Replace with actual number
     };
 
     if (!car) return <div className="p-4">No car selected</div>;

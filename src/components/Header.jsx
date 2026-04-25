@@ -7,6 +7,10 @@ const Header = ({ toggleSidebar }) => {
 
     const { user, logout, isAdmin } = useAuth();
     const navigate = useNavigate();
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
+    };
 
     return (
         <header className="sticky top-0 flex items-center justify-between bg-slate-900 text-white px-4 py-3 shadow-md z-50">
@@ -68,7 +72,7 @@ const Header = ({ toggleSidebar }) => {
                             </button>
                         )}
                         <button
-                            onClick={logout}
+                            onClick={handleLogout}
                             className="flex items-center gap-1 bg-red-600 hover:bg-red-700 px-2 md:px-3 py-1 md:py-2 rounded-md text-xs md:text-sm transition-colors"
                         >
                             <LogOut size={16} />

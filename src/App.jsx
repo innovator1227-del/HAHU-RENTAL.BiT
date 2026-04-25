@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import Sidebar from "./components/Sidebar";
+import UserSidebar from "./components/UserSidebar";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
@@ -33,7 +33,7 @@ const App = () => {
 
           <div className="flex flex-1">
             {/* Sidebar */}
-            <Sidebar isOpen={isOpen} />
+            <UserSidebar isOpen={isOpen} />
 
             {/* Routes Content */}
             <div
