@@ -1,11 +1,19 @@
 import { useState } from "react";
 import {
     LayoutDashboard,
-    MoreHorizontal,
-    Package,
-    ChevronDown,
-    Settings,
+    Car,
+    CalendarDays,
+    Clock,
+    CarFront,
+    History,
+    Heart,
+    Wallet,
+    MessageCircle,
     User,
+    Settings,
+    Package,
+    MoreHorizontal,
+    ChevronDown
 } from "lucide-react";
 
 const UserSidebar = ({ isOpen }) => {
@@ -25,10 +33,59 @@ const UserSidebar = ({ isOpen }) => {
             {/* Scrollable Menu */}
             <div className="h-[calc(100%-64px)] overflow-y-auto p-1 space-y-2">
 
+
                 {/* Dashboard */}
                 <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
                     <LayoutDashboard />
                     {isOpen && <span>Dashboard</span>}
+                </div>
+
+                {/*booking */}
+                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                    <CalendarDays />
+                    {isOpen && <span>MY Booking</span>}
+                </div>
+                {/*history */}
+
+                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                    <History />
+                    {isOpen && <span>History</span>}
+                </div>
+
+                {/* cars */}
+                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                    <Car />
+                    {isOpen && <span>Cars</span>}
+                </div>
+
+                {/* sub-items */}
+                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                    <Clock />
+                    {isOpen && <span>sub-item</span>}
+                </div>
+
+                {/* Active */}
+                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                    <CarFront />
+                    {isOpen && <span>Active</span>}
+                </div>
+
+                {/* favorite */}
+                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                    <Heart />
+                    {isOpen && <span>Favorite</span>}
+                </div>
+
+                {/* wallet */}
+                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                    <Wallet />
+                    {isOpen && <span>Wallet</span>}
+                </div>
+
+                {/* support */}
+                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                    <MessageCircle />
+                    {isOpen && <span>Support</span>}
                 </div>
 
                 {/* Cars */}
