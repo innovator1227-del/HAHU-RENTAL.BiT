@@ -16,7 +16,7 @@ const UserLogin = () => {
             <div className="mx-auto flex max-w-5xl flex-col gap-8 rounded-4xl bg-slate-950/95 p-3 shadow-2xl shadow-slate-950/50 ring-1 ring-white/10 sm:p-10">
                 <div className="space-y-3 text-center sm:text-left">
                     <span className="inline-flex rounded-full bg-indigo-500/10 px-4 py-2 text-sm text-indigo-200">User access</span>
-                    <h1 className="text-4xl font-semibold text-white">Sign in to continue booking your next ride.</h1>
+                    <h1 className="text-4xl font-semibold text-white">Welcome back! Sign in to your account.</h1>
                     <p className="max-w-2xl text-sm leading-7 text-slate-400">Use your account to explore cars, review offers, and complete secure rentals.</p>
                 </div>
 
