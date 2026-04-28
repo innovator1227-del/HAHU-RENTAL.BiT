@@ -19,6 +19,7 @@ import BookingForm from "./pages/BookingForm";
 import Checkout from "./pages/Checkout";
 import AdminRoute from "./routes/AdminRoute";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -27,7 +28,7 @@ const App = () => {
     <CarsProvider>
       <AuthProvider>
         <div className="bg-slate-950 min-h-screen text-white flex flex-col">
-
+          <Home />
           {/* Header */}
           <Header toggleSidebar={() => setIsOpen(!isOpen)} />
 

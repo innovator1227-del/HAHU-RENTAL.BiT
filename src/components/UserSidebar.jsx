@@ -52,6 +52,7 @@ const UserSidebar = ({ isOpen }) => {
                     {isOpen && <span>History</span>}
                 </div>
 
+
                 {/* cars */}
                 <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
                     <Car />
