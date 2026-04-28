@@ -11,7 +11,7 @@ const UserLogin = () => {
 
     return (
         <div
-            className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.18),transparent_20%), #020617] px-2 py-10">
+            className="min-h-screen bg-black bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.18),transparent_20%), #020617] px-2 py-10">
 
             <div className="mx-auto flex max-w-5xl flex-col gap-8 rounded-4xl bg-slate-950/95 p-3 shadow-2xl shadow-slate-950/50 ring-1 ring-white/10 sm:p-10">
                 <div className="space-y-3 text-center sm:text-left">

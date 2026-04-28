@@ -91,18 +91,18 @@ const Home = () => {
     };
 
     return (
-        <div className="min-h-screen bg-slate-50">
+        <div className="min-h-screen bg-slate-950">
             {/* TOP NAVBAR */}
-            <header className="sticky top-0 z-50 bg-white shadow-sm">
+            <header className="sticky top-0 z-50 bg-black text-white shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-                    <h1 className="text-xl sm:text-2xl font-bold text-slate-900">
+                    <h1 className="text-xl sm:text-2xl font-bold text-white">
                         HAHU RENTALS
                     </h1>
 
                     <div className="flex items-center gap-3">
                         <Link
                             to="/login"
-                            className="px-4 py-2 rounded-lg border border-slate-300 text-sm font-medium hover:bg-slate-100 transition"
+                            className="px-4 py-2 rounded-lg border border-slate-300 text-sm font-medium hover:bg-slate-900 transition"
                         >
                             Login
                         </Link>
@@ -118,8 +118,8 @@ const Home = () => {
             </header>
 
             {/* HERO SECTION */}
-            <section className="relative overflow-hidden py-10">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <section className="relative overflow-hidden py-10 text-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 text-white">
                     <Slider {...sliderSettings}>
                         {heroSlides.map((slide) => (
                             <div key={slide.id}>
@@ -132,17 +132,17 @@ const Home = () => {
                                             Trusted Car Rental Platform
                                         </p>
 
-                                        <h2 className="text-3xl sm:text-5xl font-bold text-slate-900 leading-tight">
+                                        <h2 className="text-3xl sm:text-5xl font-bold text-white leading-tight">
                                             {slide.title}
                                         </h2>
 
-                                        <p className="text-slate-600 text-sm sm:text-base leading-7 max-w-xl mx-auto md:mx-0">
+                                        <p className="text-slate-400 text-sm sm:text-base leading-7 max-w-xl mx-auto md:mx-0">
                                             {slide.description}
                                         </p>
 
                                         <div className="flex justify-center md:justify-start items-center gap-3 text-yellow-500">
                                             ⭐⭐⭐⭐⭐
-                                            <span className="text-slate-700 text-sm">
+                                            <span className="text-slate-400 text-sm">
                                                 4.8/5 Rating • 5,000+ Happy Customers
                                             </span>
                                         </div>
@@ -157,7 +157,7 @@ const Home = () => {
 
                                             <Link
                                                 to="/register"
-                                                className="border border-slate-300 px-6 py-3 rounded-xl hover:bg-slate-100 transition"
+                                                className="border border-slate-300 px-6 py-3 rounded-xl hover:bg-slate-900 transition"
                                             >
                                                 Create Account
                                             </Link>
@@ -185,7 +185,7 @@ const Home = () => {
             <section
                 className="max-w-6xl mx-auto px-4 sm:px-6 mt-10"
             >
-                <div className="bg-white rounded-2xl shadow-lg p-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="bg-slate-800 text-white rounded-2xl shadow-lg p-6 grid grid-cols-1 md:grid-cols-4 gap-4">
                     <input
                         type="text"
                         placeholder="Pickup Location"
@@ -214,7 +214,7 @@ const Home = () => {
             {/* POPULAR CARS */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-20">
                 <h2
-                    className="text-3xl font-bold text-slate-900 mb-8"
+                    className="text-3xl font-bold text-slate-50 mb-8"
                 >
                     Popular Cars
                 </h2>
@@ -223,18 +223,18 @@ const Home = () => {
                     {popularCars.map((car, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition"
+                            className="bg-slate-800 text-white rounded-2xl shadow-md p-6 hover:shadow-xl transition"
                         >
-                            <h3 className="text-xl font-semibold text-slate-900">
+                            <h3 className="text-xl font-semibold text-slate-50">
                                 {car.title}
                             </h3>
 
-                            <p className="text-slate-600 mt-2">{car.type}</p>
-                            <p className="text-blue-600 font-medium mt-3">{car.price}</p>
+                            <p className="text-slate-400 mt-2">{car.type}</p>
+                            <p className="text-blue-400 font-medium mt-3">{car.price}</p>
 
                             <Link
                                 to="/login"
-                                className="inline-block mt-4 text-sm font-medium text-blue-600 hover:underline"
+                                className="inline-block mt-4 text-sm font-medium text-blue-400 hover:underline"
                             >
                                 View Details
                             </Link>
@@ -245,7 +245,7 @@ const Home = () => {
 
             {/* SERVICES */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-20">
-                <h2 className="text-3xl font-bold text-slate-900 mb-8">
+                <h2 className="text-3xl font-bold text-slate-50 mb-8">
                     Our Services
                 </h2>
 
@@ -253,13 +253,13 @@ const Home = () => {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition"
+                            className="bg-slate-800 text-white rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition"
                         >
-                            <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                            <h3 className="text-xl font-semibold text-slate-50 mb-3">
                                 {service.title}
                             </h3>
 
-                            <p className="text-slate-600">{service.desc}</p>
+                            <p className="text-slate-400">{service.desc}</p>
                         </div>
                     ))}
                 </div>
@@ -267,7 +267,7 @@ const Home = () => {
 
             {/* TESTIMONIALS */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-20 mb-20">
-                <h2 className="text-3xl font-bold text-slate-900 mb-8">
+                <h2 className="text-3xl font-bold text-slate-50 mb-8">
                     What Our Customers Say
                 </h2>
 
@@ -275,19 +275,22 @@ const Home = () => {
                     {testimonials.map((item, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-2xl shadow-md p-6"
+                            className="bg-slate-800 text-white rounded-2xl shadow-md p-6"
                         >
-                            <p className="text-slate-600 mb-4">
+                            <p className="text-slate-400 mb-4">
                                 "{item.text}"
                             </p>
 
-                            <h4 className="font-semibold text-slate-900">
+                            <h4 className="font-semibold text-slate-50">
                                 — {item.name}
                             </h4>
                         </div>
                     ))}
                 </div>
             </section>
+            <div className="sticky top-0 z-60 text-white bg-black text-center justify-center p-10 rounded-lg">
+                @2026 HAHU Rentals. All rights reserved.devloped by @tebie-tech
+            </div>
         </div>
     );
 };
