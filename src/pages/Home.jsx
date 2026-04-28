@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
+import Slick from "react-slick";
+const Slider = Slick?.default?.default || Slick?.default || Slick;
 import Bus9 from "../assets/Bus9.png";
 import Bus1 from "../assets/Bus1.png";
 import Bus6 from "../assets/Bus6.png";

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
     LayoutDashboard,
     Car,
@@ -35,65 +36,114 @@ const UserSidebar = ({ isOpen }) => {
 
 
                 {/* Dashboard */}
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                <NavLink
+                    to="/main"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <LayoutDashboard />
                     {isOpen && <span>Dashboard</span>}
-                </div>
+                </NavLink>
 
-                {/*booking */}
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                {/* booking */}
+                <NavLink
+                    to="/booking"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <CalendarDays />
                     {isOpen && <span>MY Booking</span>}
-                </div>
-                {/*history */}
+                </NavLink>
 
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                {/* history */}
+                <NavLink
+                    to="/history"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <History />
                     {isOpen && <span>History</span>}
-                </div>
-
+                </NavLink>
 
                 {/* cars */}
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                <NavLink
+                    to="/cars"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <Car />
                     {isOpen && <span>Cars</span>}
-                </div>
+                </NavLink>
 
                 {/* sub-items */}
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                <NavLink
+                    to="/subitem"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <Clock />
                     {isOpen && <span>sub-item</span>}
-                </div>
+                </NavLink>
 
-                {/* Active */}
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                {/* active */}
+                <NavLink
+                    to="/active"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <CarFront />
                     {isOpen && <span>Active</span>}
-                </div>
+                </NavLink>
 
                 {/* favorite */}
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                <NavLink
+                    to="/favorite"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <Heart />
                     {isOpen && <span>Favorite</span>}
-                </div>
+                </NavLink>
 
                 {/* wallet */}
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                <NavLink
+                    to="/wallet"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <Wallet />
                     {isOpen && <span>Wallet</span>}
-                </div>
+                </NavLink>
 
                 {/* support */}
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                <NavLink
+                    to="/support"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <MessageCircle />
                     {isOpen && <span>Support</span>}
-                </div>
+                </NavLink>
 
-                {/* Cars */}
-                <div className="flex items-center gap-3 p-2 hover:bg-slate-800 rounded cursor-pointer">
+                {/* packages */}
+                <NavLink
+                    to="/packages"
+                    className={({ isActive }) =>
+                        `flex items-center gap-3 p-2 rounded transition ${isActive ? "bg-slate-800" : "hover:bg-slate-800"}`
+                    }
+                >
                     <Package />
-                    {isOpen && <span>Cars</span>}
-                </div>
+                    {isOpen && <span>Packages</span>}
+                </NavLink>
 
                 {/* Dropdown */}
                 <div>
@@ -119,26 +169,29 @@ const UserSidebar = ({ isOpen }) => {
                         className={`ml-8 mt-2 space-y-2 overflow-hidden transition-all duration-900 ${openDropdown && isOpen ? "max-h-52 opacity-100" : "max-h-0 opacity-100"
                             }`}
                     >
-                        <div
-                            className={`flex items-center gap-2 cursor-pointer hover:text-gray-300 transition-all duration-500 ${openDropdown && isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
-                                }`}
+                        <NavLink
+                            to="/profile"
+                            className={({ isActive }) =>
+                                `flex items-center gap-2 rounded-xl px-4 py-2 text-sm transition-all duration-500 ${isActive ? "bg-slate-800" : "hover:text-gray-300"} ${openDropdown && isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"}`
+                            }
                         >
                             <User size={18} />
                             Profile
-                        </div>
-                        <div
-                            className={`flex items-center gap-2 cursor-pointer hover:text-gray-300 transition-all duration-500 ${openDropdown && isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"
-                                }`}
+                        </NavLink>
+                        <NavLink
+                            to="/settings"
+                            className={({ isActive }) =>
+                                `flex items-center gap-2 rounded-xl px-4 py-2 text-sm transition-all duration-500 ${isActive ? "bg-slate-800" : "hover:text-gray-300"} ${openDropdown && isOpen ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"}`
+                            }
                         >
                             <Settings size={18} />
                             Settings
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
-
             </div>
         </aside>
     );
-}
+};
 
 export default UserSidebar;
