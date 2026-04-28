@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-
 import Bus9 from "../assets/Bus9.png";
 import Bus1 from "../assets/Bus1.png";
 import Bus6 from "../assets/Bus6.png";

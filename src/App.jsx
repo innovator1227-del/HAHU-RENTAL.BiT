@@ -1,69 +1,68 @@
 import React from "react";
-import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-
-import UserSidebar from "./components/UserSidebar";
-import Header from "./components/Header";
-import Main from "./components/Main";
 
 import { AuthProvider } from "./context/AuthContext";
 import { CarsProvider } from "./context/CarsContext";
 
-// pages
-import AdminDashboard from "./pages/AdminDashboard";
+import PublicLayout from "./layouts/PublicLayout";
+import UserLayout from "./layouts/UserLayout";
+import AdminLayout from "./layouts/AdminLayout";
+
+import GuestRoute from "./routes/GuestRoute";
+import UserRoute from "./routes/UserRoute";
+import AdminRoute from "./routes/AdminRoute";
+
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import AdminLogin from "./pages/AdminLogin";
 import UserLogin from "./pages/UserLogin";
+import AdminLogin from "./pages/AdminLogin";
+import Main from "./components/Main";
 import BookingForm from "./pages/BookingForm";
 import Checkout from "./pages/Checkout";
-import AdminRoute from "./routes/AdminRoute";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminCars from "./pages/AdminCars";
+import AdminBookings from "./pages/AdminBookings";
+import AdminUsers from "./pages/AdminUsers";
+import AdminReports from "./pages/AdminReports";
+import AdminSettings from "./pages/AdminSettings";
 
 const App = () => {
-  const [isOpen, setIsOpen] = useState(true);
-
   return (
     <CarsProvider>
       <AuthProvider>
-        <div className="bg-slate-950 min-h-screen text-white flex flex-col">
-          <Home />
-          {/* Header */}
-          <Header toggleSidebar={() => setIsOpen(!isOpen)} />
+        <Routes>
+          <Route element={<GuestRoute />}>
+            <Route element={<PublicLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/user-login" element={<UserLogin />} />
+              <Route path="/admin-login" element={<AdminLogin />} />
+            </Route>
+          </Route>
 
-          <div className="flex flex-1">
-            {/* Sidebar */}
-            <UserSidebar isOpen={isOpen} />
+          <Route element={<UserRoute />}>
+            <Route element={<UserLayout />}>
+              <Route path="/main" element={<Main />} />
+              <Route path="/booking" element={<BookingForm />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Route>
+          </Route>
 
-            {/* Routes Content */}
-            <div
-              className="flex-1 p-2 transition-all duration-300 min-h-full"
-            >
-              <Routes>
-                <Route path="/" element={<Navigate to="/login" />} />
-                <Route path="/main" element={<Main />} />
+          <Route element={<AdminRoute />}>
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="cars" element={<AdminCars />} />
+              <Route path="bookings" element={<AdminBookings />} />
+              <Route path="users" element={<AdminUsers />} />
+              <Route path="reports" element={<AdminReports />} />
+              <Route path="settings" element={<AdminSettings />} />
+            </Route>
+          </Route>
 
-                <Route
-                  path="/admin"
-                  element={
-                    <AdminRoute>
-                      <AdminDashboard />
-                    </AdminRoute>
-                  }
-                />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/admin-login" element={<AdminLogin />} />
-                <Route path="/user-login" element={<UserLogin />} />
-                <Route path="/booking" element={<BookingForm />} />
-                <Route path="/checkout" element={<Checkout />} />
-              </Routes>
-            </div>
-          </div>
-
-          <Footer />
-        </div>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </AuthProvider>
     </CarsProvider>
   );

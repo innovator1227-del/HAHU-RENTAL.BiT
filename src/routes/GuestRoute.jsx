@@ -1,11 +1,14 @@
-import React from 'react'
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const GuestRoute = () => {
-    return (
-        <div>
-            for guest only
-        </div>
-    )
-}
+    const { user, isAdmin } = useAuth();
 
-export default GuestRoute
+    if (user) {
+        return <Navigate to={isAdmin() ? "/admin" : "/main"} replace />;
+    }
+
+    return <Outlet />;
+};
+
+export default GuestRoute;

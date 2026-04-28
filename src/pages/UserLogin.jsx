@@ -3,10 +3,10 @@ import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const UserLogin = () => {
-    const { user } = useAuth();
+    const { user, isAdmin } = useAuth();
 
     if (user) {
-        return <Navigate to="/main" replace />;
+        return <Navigate to={isAdmin() ? "/admin" : "/main"} replace />;
     }
 
     return (
@@ -26,6 +26,7 @@ const UserLogin = () => {
                         description="Sign in as a user to browse the app and access user content."
                         submitLabel="Sign in as User"
                         role="user"
+                        onSuccessNavigate="/main"
                     />
 
                     <div className="mt-5 text-center text-sm text-slate-400">

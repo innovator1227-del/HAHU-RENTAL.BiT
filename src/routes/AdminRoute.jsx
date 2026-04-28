@@ -1,7 +1,7 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const AdminRoute = ({ children }) => {
+const AdminRoute = () => {
     const { user, isAdmin } = useAuth();
 
     if (!user) {
@@ -9,10 +9,10 @@ const AdminRoute = ({ children }) => {
     }
 
     if (!isAdmin()) {
-        return <Navigate to="/" replace />; // normal user goes home
+        return <Navigate to="/main" replace />;
     }
 
-    return children;
+    return <Outlet />;
 };
 
 export default AdminRoute;

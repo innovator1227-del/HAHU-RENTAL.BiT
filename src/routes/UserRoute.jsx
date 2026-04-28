@@ -1,11 +1,18 @@
-import React from 'react'
+import { Navigate, Outlet } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const UserRoute = () => {
-    return (
-        <div>
-            loged in user only
-        </div>
-    )
-}
+    const { user, isAdmin } = useAuth();
 
-export default UserRoute
+    if (!user) {
+        return <Navigate to="/user-login" replace />;
+    }
+
+    if (isAdmin()) {
+        return <Navigate to="/admin" replace />;
+    }
+
+    return <Outlet />;
+};
+
+export default UserRoute;

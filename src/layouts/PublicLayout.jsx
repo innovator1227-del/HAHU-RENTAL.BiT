@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const PublicLayout = () => {
     return (
-        <div>
-            for public only
+        <div className="min-h-screen bg-slate-50 text-slate-900">
+            <Outlet />
         </div>
-    )
-}
+    );
+};
 
-export default PublicLayout
+export default PublicLayout;
