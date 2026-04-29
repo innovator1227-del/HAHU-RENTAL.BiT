@@ -3,17 +3,18 @@ import Logo from "../assets/car.png";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-const Header = ({ toggleSidebar }) => {
+const Header = ({ toggleSidebar, closeSidebar }) => {
 
     const { user, logout, isAdmin } = useAuth();
     const navigate = useNavigate();
     const handleLogout = () => {
+        closeSidebar?.();
         logout();
-        navigate("/login");
+        navigate("/login", { replace: true });
     };
 
     return (
-        <header className="sticky top-0 flex items-center justify-between bg-slate-900 text-white px-4 py-3 shadow-md z-50">
+        <header className="sticky top-0 flex items-center justify-between bg-slate-900 text-white px-4 py-3 shadow-md z-60">
 
             {/* Left: Logo + Back + Menu + Title */}
             <div className="flex items-center gap-3 rounded-full">

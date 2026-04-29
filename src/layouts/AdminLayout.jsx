@@ -8,9 +8,9 @@ const AdminLayout = () => {
 
     return (
         <div className="bg-slate-950 min-h-screen text-white">
-            <Header toggleSidebar={() => setIsOpen(!isOpen)} />
+            <Header toggleSidebar={() => setIsOpen(!isOpen)} closeSidebar={() => setIsOpen(false)} />
             <div className="flex">
-                <AdminSidebar isOpen={isOpen} />
+                <AdminSidebar isOpen={isOpen} toggleSidebar={() => setIsOpen(!isOpen)} />
                 <main className={`flex-1 transition-all duration-300 ${isOpen ? "md:ml-64" : "md:ml-20"} p-4 pt-20`}>
                     <Outlet />
                 </main>

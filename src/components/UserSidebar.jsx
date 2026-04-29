@@ -26,10 +26,6 @@ const UserSidebar = ({ isOpen }) => {
                ${isOpen ? "w-64" : "w-0 md:w-20"} 
               fixed md:relative z-50`}
         >
-            {/* Logo (fixed) */}
-            <div className="bg-slate-900 p-4 font-bold text-lg border-b">
-                HAHU Rentals
-            </div>
 
             {/* Scrollable Menu */}
             <div className="h-[calc(100%-64px)] overflow-y-auto p-1 space-y-2">

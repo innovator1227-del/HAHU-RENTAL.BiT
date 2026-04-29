@@ -8,14 +8,15 @@ import {
     Settings,
     BarChart3,
     ChevronDown,
+    Menu,
 } from "lucide-react";
 
-const AdminSidebar = ({ isOpen }) => {
+const AdminSidebar = ({ isOpen, toggleSidebar }) => {
     const [openMenu, setOpenMenu] = useState(false);
 
     return (
         <aside
-            className={`fixed inset-y-0 left-0 z-50 bg-slate-900 text-white transition-all duration-300 overflow-hidden ${isOpen ? "w-64" : "w-20"}`}
+            className={`min-h-screen bg-slate-900 text-white transition-all duration-300 overflow-hidden fixed inset-y-0 left-0 z-50 ${isOpen ? "w-64" : "w-0 md:w-20"}`}
         >
             <div className="flex items-center justify-between px-4 py-4 border-b border-slate-800">
                 <div className="flex items-center gap-3">
@@ -24,6 +25,10 @@ const AdminSidebar = ({ isOpen }) => {
                     </div>
                     {isOpen && <span className="font-semibold">Admin Panel</span>}
                 </div>
+
+                <button onClick={toggleSidebar} className="cursor-pointer">
+                    <Menu />
+                </button>
             </div>
 
             <nav className="mt-4 px-2 space-y-1">

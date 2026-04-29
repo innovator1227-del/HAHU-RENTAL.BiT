@@ -9,7 +9,7 @@ const UserLayout = () => {
 
     return (
         <div className="bg-slate-950 min-h-screen text-white flex flex-col">
-            <Header toggleSidebar={() => setIsOpen(!isOpen)} />
+            <Header toggleSidebar={() => setIsOpen(!isOpen)} closeSidebar={() => setIsOpen(false)} />
             <div className="flex flex-1">
                 <UserSidebar isOpen={isOpen} />
                 <main className="flex-1 p-2 transition-all duration-300 min-h-full md:ml-20">

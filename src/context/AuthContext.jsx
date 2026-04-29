@@ -4,7 +4,7 @@ const AuthContext = createContext();
 const AUTH_USER_KEY = "authUser";
 const USERS_KEY = "users";
 const defaultUsers = [
-    { email: "admin@gmail.com", password: "1234", role: "admin" },
+    { email: "tebie@gmail.com", password: "123@abc", role: "admin" },
 ];
 
 export function AuthProvider({ children }) {
